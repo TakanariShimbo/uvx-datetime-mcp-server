@@ -51,7 +51,6 @@ Example:
 
 import asyncio
 import os
-import sys
 from datetime import datetime
 
 import pytz
@@ -405,11 +404,11 @@ async def run_server():
     Sets up the stdio communication channels, prints startup information,
     and starts the MCP server. The server communicates via standard input/output streams.
     """
-    print("DateTime MCP Server running on stdio", file=sys.stderr)
-    print(f"Default format: {DATETIME_FORMAT}", file=sys.stderr)
-    print(f"Default timezone: {TIMEZONE}", file=sys.stderr)
+    print("DateTime MCP Server running on stdio")
+    print(f"Default format: {DATETIME_FORMAT}")
+    print(f"Default timezone: {TIMEZONE}")
     if DATETIME_FORMAT == "custom":
-        print(f"Custom format string: {DATE_FORMAT_STRING}", file=sys.stderr)
+        print(f"Custom format string: {DATE_FORMAT_STRING}")
 
     async with stdio_server() as (read_stream, write_stream):
         await app.run(read_stream, write_stream, app.create_initialization_options())
