@@ -291,7 +291,6 @@ uvx-datetime-mcp-server/
 ├── docs/
 │   ├── README.md                # 英語版ドキュメント
 │   └── README_ja.md             # このファイル
-├── dist/                        # ビルド出力ディレクトリ
 ├── .github/
 │   └── workflows/
 │       └── pypi-publish.yml     # Trusted Publishers を使用した PyPI 公開ワークフロー
