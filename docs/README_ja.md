@@ -1,6 +1,6 @@
 [English](README.md) | [日本語](README_ja.md) | **README**
 
-# DateTime MCP サーバー (Python)
+# DateTime MCP サーバー
 
 現在の日付と時刻を様々な形式で取得するツールを提供する Model Context Protocol (MCP)サーバーです。これは Python SDK を使用した MCP サーバーの実装例で、Python で MCP サーバーを構築する方法を示しています。
 

@@ -1,6 +1,6 @@
 [English](README.md) | [日本語](README_ja.md) | **README**
 
-# DateTime MCP Server (Python)
+# DateTime MCP Server
 
 A Model Context Protocol (MCP) server that provides tools to get the current date and time in various formats. This is a Python implementation of the datetime MCP server, demonstrating how to build MCP servers using the Python SDK.
 
