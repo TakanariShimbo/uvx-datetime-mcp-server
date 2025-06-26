@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "takanarishimbo-datetime-mcp-server"
-version = "0.1.4"
+version = "0.1.5"
 description = "A simple MCP server that provides date and time functionality"
 readme = "docs/README.md"
 license = {text = "MIT"}
