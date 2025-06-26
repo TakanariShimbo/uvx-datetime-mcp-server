@@ -318,6 +318,8 @@ if [ -n "$INCREMENT_TYPE" ]; then
   
   update_server_version "$SERVER_VERSION" "$NEW_VERSION"
   
+  echo "Cleaning up old virtual environment..."
+  rm -rf .venv
   uv lock
   git add pyproject.toml uv.lock
   git commit -m "chore: release version $NEW_VERSION"
@@ -334,6 +336,8 @@ else
   
   update_server_version "$SERVER_VERSION" "$SPECIFIC_VERSION"
   
+  echo "Cleaning up old virtual environment..."
+  rm -rf .venv
   uv lock
   git add pyproject.toml uv.lock
   git commit -m "chore: release version $SPECIFIC_VERSION"
