@@ -132,8 +132,6 @@ Python の strftime 形式コードを使用：
 
 ## 開発
 
-### 方法 1: Python をローカルで使用
-
 1. **このリポジトリをクローン**
 
    ```bash
@@ -159,32 +157,6 @@ Python の strftime 形式コードを使用：
    npx @modelcontextprotocol/inspector uv run takanarishimbo-datetime-mcp-server
    ```
 
-### 方法 2: Docker を使用（ローカルに Python 不要）
-
-ローカルに Python や uv がインストールされていない場合、Docker を使用してプロジェクトをビルドして実行できます：
-
-1. **リポジトリをクローン**
-
-   ```bash
-   git clone https://github.com/TakanariShimbo/uvx-datetime-mcp-server.git
-   cd uvx-datetime-mcp-server
-   ```
-
-2. **Docker イメージをビルド**
-
-   ```bash
-   docker build -t uvx-datetime-mcp-server .
-   ```
-
-3. **サーバーを実行**
-
-   ```bash
-   docker run --rm uvx-datetime-mcp-server
-   
-   # または環境変数を指定して実行
-   docker run --rm -e DATETIME_FORMAT=human -e TIMEZONE=Asia/Tokyo uvx-datetime-mcp-server
-   ```
-
 ## PyPI への公開
 
 このプロジェクトは PyPI の Trusted Publishers 機能を使用して、GitHub Actions からトークンなしで安全に公開します。
@@ -192,9 +164,11 @@ Python の strftime 形式コードを使用：
 ### 1. PyPI Trusted Publisher の設定
 
 1. **PyPI にログイン**（必要に応じてアカウントを作成）
+
    - https://pypi.org/ にアクセス
 
 2. **公開設定に移動**
+
    - アカウント設定に移動
    - 「Publishing」をクリックまたは https://pypi.org/manage/account/publishing/ にアクセス
 
@@ -211,6 +185,7 @@ Python の strftime 形式コードを使用：
 ### 2. GitHub 環境の設定（推奨）
 
 1. **リポジトリ設定に移動**
+
    - GitHub リポジトリに移動
    - 「Settings」→「Environments」をクリック
 
@@ -226,6 +201,7 @@ Python の strftime 形式コードを使用：
 リリーススクリプトは GitHub にプッシュする必要があるため、GitHub トークンが必要です：
 
 1. **GitHub パーソナルアクセストークンの作成**
+
    - https://github.com/settings/tokens にアクセス
    - 「Generate new token」→「Generate new token (classic)」をクリック
    - 有効期限を設定（推奨：90 日またはカスタム）
@@ -269,6 +245,7 @@ chmod +x scripts/release.sh
 ### 5. 公開の確認
 
 1. **GitHub Actions を確認**
+
    - リポジトリの「Actions」タブに移動
    - 「Publish to PyPI」ワークフローが正常に完了したことを確認
 
@@ -285,14 +262,6 @@ chmod +x scripts/release.sh
 5. ワークフローが OIDC を使用して PyPI に認証（トークン不要！）
 6. ワークフローがプロジェクトをビルドして PyPI に公開
 7. パッケージが`pip install`や`uvx`でグローバルに利用可能になる
-
-## テスト
-
-pytest でテストを実行：
-
-```bash
-uv run pytest
-```
 
 ## コード品質
 

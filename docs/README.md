@@ -132,8 +132,6 @@ Parameters:
 
 ## Development
 
-### Method 1: Using Python locally
-
 1. **Clone this repository**
 
    ```bash
@@ -166,9 +164,11 @@ This project uses PyPI's Trusted Publishers feature for secure, token-less publi
 ### 1. Configure PyPI Trusted Publisher
 
 1. **Log in to PyPI** (create account if needed)
+
    - Go to https://pypi.org/
 
 2. **Navigate to Publishing Settings**
+
    - Go to your account settings
    - Click on "Publishing" or go to https://pypi.org/manage/account/publishing/
 
@@ -185,6 +185,7 @@ This project uses PyPI's Trusted Publishers feature for secure, token-less publi
 ### 2. Configure GitHub Environment (Recommended)
 
 1. **Navigate to Repository Settings**
+
    - Go to your GitHub repository
    - Click "Settings" → "Environments"
 
@@ -261,14 +262,6 @@ chmod +x scripts/release.sh
 5. Workflow uses OIDC to authenticate with PyPI (no tokens needed!)
 6. Workflow builds project and publishes to PyPI
 7. Package becomes available globally via `pip install` or `uvx`
-
-## Testing
-
-Run tests with pytest:
-
-```bash
-uv run pytest
-```
 
 ## Code Quality
 
