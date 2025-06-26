@@ -180,7 +180,7 @@ git pull origin main
 # =====================
 PACKAGE_VERSION=$(grep -o 'version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
 LOCK_VERSION=$(grep -A 1 'name = "uvx-datetime-mcp-server"' uv.lock | grep 'version = ' | cut -d'"' -f2)
-SERVER_VERSION=$(grep -o '__version__ = "[^"]*"' server.py | cut -d'"' -f2)
+SERVER_VERSION=$(grep -o '__version__ = "[^"]*"' src/server.py | cut -d'"' -f2)
 
 echo "Current versions:"
 echo "- pyproject.toml: $PACKAGE_VERSION"
@@ -216,12 +216,12 @@ update_server_version() {
   echo "Updating version in server.py from $old_version to $new_version..."
   if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
-    sed -i '' "s/__version__ = \"$old_version\"/__version__ = \"$new_version\"/" server.py
+    sed -i '' "s/__version__ = \"$old_version\"/__version__ = \"$new_version\"/" src/server.py
   else
     # Linux
-    sed -i "s/__version__ = \"$old_version\"/__version__ = \"$new_version\"/" server.py
+    sed -i "s/__version__ = \"$old_version\"/__version__ = \"$new_version\"/" src/server.py
   fi
-  git add server.py
+  git add src/server.py
   
   if [ -n "$commit_msg" ]; then
     git commit -m "$commit_msg"
