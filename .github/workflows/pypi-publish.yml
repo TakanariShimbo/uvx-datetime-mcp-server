@@ -1,14 +1,15 @@
 name: Publish to PyPI
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   publish:
     name: Build and Publish to PyPI
     runs-on: ubuntu-latest
-    environment: pypi
+    environment: pypi  # Optional but recommended for security
     permissions:
       id-token: write  # Required for trusted publishing
     steps:

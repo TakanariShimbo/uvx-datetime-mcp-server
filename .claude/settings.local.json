@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "WebFetch(domain:docs.astral.sh)",
+      "Bash(mv:*)"
+    ],
+    "deny": []
+  }
+}
