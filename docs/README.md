@@ -286,16 +286,16 @@ uvx-datetime-mcp-server/
 │   ├── __init__.py              # Package initialization
 │   ├── __main__.py              # Main entry point
 │   └── server.py                # Server implementation
+├── pyproject.toml               # Project configuration
+├── uv.lock                      # Dependency lock file
+├── .github/
+│   └── workflows/
+│       └── pypi-publish.yml     # PyPI publish workflow with Trusted Publishers
 ├── scripts/
 │   └── release.sh               # Release automation script
 ├── docs/
 │   ├── README.md                # This file
 │   └── README_ja.md             # Japanese documentation
-├── .github/
-│   └── workflows/
-│       └── pypi-publish.yml     # PyPI publish workflow with Trusted Publishers
-├── pyproject.toml               # Project configuration
-├── uv.lock                      # Dependency lock file
 └── .gitignore                   # Git ignore file
 ```
 
