@@ -179,7 +179,7 @@ git pull origin main
 #   異なる形式 → pyproject.toml: 1.0.0, uv.lock: 1.0.0, server.py: 1.0.0
 # =====================
 PACKAGE_VERSION=$(grep -o 'version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
-LOCK_VERSION=$(grep -A 1 'name = "uvx-datetime-mcp-server"' uv.lock | grep 'version = ' | cut -d'"' -f2)
+LOCK_VERSION=$(grep -A 1 'name = "takanarishimbo-datetime-mcp-server"' uv.lock | grep 'version = ' | cut -d'"' -f2)
 SERVER_VERSION=$(grep -o '__version__ = "[^"]*"' src/__init__.py | cut -d'"' -f2)
 
 echo "Current versions:"
