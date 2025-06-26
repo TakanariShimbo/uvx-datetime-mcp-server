@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "takanarishimbo-datetime-mcp-server"
 version = "0.1.1"
 description = "A simple MCP server that provides date and time functionality"
-readme = "README.md"
+readme = "docs/README.md"
 license = {text = "MIT"}
 authors = [{ name = "Takanari Shimbo", email = "takanari.shimbo@gmail.com" }]
 keywords = ["mcp", "server", "datetime", "timezone"]
