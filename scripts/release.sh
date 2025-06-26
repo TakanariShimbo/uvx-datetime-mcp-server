@@ -363,7 +363,7 @@ fi
 #   ネットワークエラー → "fatal: unable to access 'https://github.com/...': Could not resolve host"
 #   プッシュでGitHub Actionsがトリガー → タグv0.1.4でワークフローが自動開始
 # =====================
-FINAL_VERSION=$(grep -o 'version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
+FINAL_VERSION=$(grep -o '^version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
 
 echo "Pushing changes and tag to remote..."
 git push origin main
