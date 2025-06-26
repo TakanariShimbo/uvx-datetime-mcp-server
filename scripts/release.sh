@@ -62,7 +62,7 @@ VERSION_ARG=$1
 # =====================
 if [[ "$VERSION_ARG" =~ ^(patch|minor|major)$ ]]; then
   INCREMENT_TYPE=$VERSION_ARG
-  CURRENT_VERSION=$(grep -o 'version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
+  CURRENT_VERSION=$(grep -o '^version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
   echo "Using semantic increment: $INCREMENT_TYPE (current version: $CURRENT_VERSION)"
 else
   if ! [[ $VERSION_ARG =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z-]+)?(\+[0-9A-Za-z-]+)?$ ]]; then
@@ -178,7 +178,7 @@ git pull origin main
 #   server.pyにバージョンがない → server.py: (空)
 #   異なる形式 → pyproject.toml: 1.0.0, uv.lock: 1.0.0, server.py: 1.0.0
 # =====================
-PACKAGE_VERSION=$(grep -o 'version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
+PACKAGE_VERSION=$(grep -o '^version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
 LOCK_VERSION=$(grep -A 1 'name = "takanarishimbo-datetime-mcp-server"' uv.lock | grep 'version = ' | cut -d'"' -f2)
 SERVER_VERSION=$(grep -o '__version__ = "[^"]*"' src/__init__.py | cut -d'"' -f2)
 
@@ -297,7 +297,7 @@ fi
 if [ -n "$INCREMENT_TYPE" ]; then
   echo "Incrementing version ($INCREMENT_TYPE)..."
   
-  CURRENT_VERSION=$(grep -o 'version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
+  CURRENT_VERSION=$(grep -o '^version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
   IFS='.' read -r major minor patch <<< "$CURRENT_VERSION"
   
   if [ "$INCREMENT_TYPE" = "major" ]; then
@@ -325,7 +325,7 @@ if [ -n "$INCREMENT_TYPE" ]; then
 else
   echo "Updating version in pyproject.toml and uv.lock..."
   
-  CURRENT_VERSION=$(grep -o 'version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
+  CURRENT_VERSION=$(grep -o '^version = "[^"]*"' pyproject.toml | cut -d'"' -f2)
   if [[ "$OSTYPE" == "darwin"* ]]; then
     sed -i '' "s/version = \"$CURRENT_VERSION\"/version = \"$SPECIFIC_VERSION\"/" pyproject.toml
   else
