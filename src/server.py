@@ -59,8 +59,6 @@ import pytz
 from pydantic import Field
 from mcp.server.fastmcp import FastMCP
 
-# Server version
-
 """
 1. Environment Configuration
 
